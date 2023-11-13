@@ -1,8 +1,37 @@
 <%- include("templates/cabezeras",{tituloweb: 'pagina de inicio'}) %>
 <body>
-    
+   <h3  class="container mt-3 text-center text-primary">Data-BD-Nodejs-Mysql</h3>
+   <div class="container">
+      <a href="/create" class="btn btn-success">Crear-Nuevo</a>
+   </div>
+   <table class="table container mt-4 table table-bordered table-striped ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOMBRE</th>
+          <th scope="col">PAIS</th>
+          <th scope="col">PHONE</th>
+        </tr>
+      </thead>
+      <tbody>
+         <% results.forEach((user)=> { %>
+
+      
+        <tr>
+          <th scope="row"><%= user.id %></th>
+          <td><%= user.name %></td>
+          <td><%= user.address %></td>
+          <td><%= user.phone %></td>
+          <td>
+            <a href="/edit/<%= user.id %>" class="btn btn-primary">Edit</a>
+            <a href="/delete/<%= user.id %>" class="btn btn-info">Delete</a>
+          </td>
+        </tr>
+      <% })  %>
+      </tbody>
+    </table>
    <div class="container mt-5">
-    <img src="https://www.gs1es.org/wp-content/uploads/2016/02/Amazon-Logo-PNG.png">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*aYtFhy_R-XgMHWH4Mf36Rw.png">
    </div>
 </body>
 </html>
