@@ -21,11 +21,7 @@ app.use(express.static(__dirname + "/public"));
 
 
 
-AWS.config.update({
-  accessKeyId: "AKIA6ODU6MV2XP32FUXU",
-  secretAccessKey: "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",
-  region: 'us-east-1' 
-});
+
 
 /* const s3 = new AWS.S3();
 
