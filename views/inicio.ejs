@@ -2,11 +2,38 @@
 <body>
 
   <div class="container mt-3 text-success text-center">
-   <h3>Laboratorio EC2-AWS -NODEJS-MYSQL</h3>
+   <h3 class="mt-5">Laboratorio Microservicios -AWS EC2-RDS</h3>
   </div>
 
    <div class="container mt-5">
     <img src="https://www.gs1es.org/wp-content/uploads/2016/02/Amazon-Logo-PNG.png">
    </div>
+   <h1>Subir Imagen a S3</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*" required>
+        <button type="submit">Subir Imagen</button>
+    </form>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData();
+            const fileInput = document.getElementById('imageInput');
+            formData.append('image', fileInput.files[0]);
+
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                alert(result.message);
+            } catch (error) {
+                console.error('Error al subir la imagen:', error);
+                alert('Error al subir la imagen. Por favor, inténtalo de nuevo.');
+            }
+        });
+    </script>
 </body>
 </html>
