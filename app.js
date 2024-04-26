@@ -21,19 +21,6 @@ app.use(express.static(__dirname + "/public"));
 
 
 
-
-
-/* const s3 = new AWS.S3();
-
- (async()=>{
-   await s3.putObject({
-    Bucket : 'demo2024jorge',
-    Body   : 'hello-world',
-    Key    : "mi-file.txt",
-   })
-   .promise();
- })();
-*/
 const s3 = new AWS.S3();
 const upload = multer({ dest: 'uploads/' });
 
