@@ -16,7 +16,7 @@ pipeline {
         stage('Instalar Dependencias') {
             steps {
                 script {
-                    "echo 'hola'"
+                     sh "echo 'hola'"
                 }
             }
         }
