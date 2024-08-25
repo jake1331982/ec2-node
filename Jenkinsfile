@@ -23,14 +23,14 @@ pipeline {
         stage('Ejecutar Pruebas') {
             steps {
                 script {
-                    sh "echo 'hola'"'
+                    sh sh "echo 'hola'"
                 }
             }
         }
         stage('Construir Proyecto') {
             steps {
                 script {
-                    sh "echo 'hola'"
+                    sh sh "echo 'hola'"
                 }
             }
         }
