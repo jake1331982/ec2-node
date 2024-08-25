@@ -3,7 +3,7 @@ pipeline {
         
     
     environment {
-        GIT_CREDENTIALS = 'GITGITHUB_CREDENTIAL'  // Reemplaza con el ID de tus credenciales
+        GIT_CREDENTIALS = 'GITHUB_CREDENTIAL'  // Reemplaza con el ID de tus credenciales
     }
     stages {
         stage('Clonar Repositorio') {
