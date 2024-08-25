@@ -6,7 +6,7 @@ pipeline{
         stage("Workspace Preparing"){
             steps{
                 script{
-                    sh "rm -rf ./*"
+                    sh "echo 'hola'"
                 }
             }
             
