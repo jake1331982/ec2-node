@@ -14,8 +14,7 @@ pipeline{
         stage("clon-repo"){
             steps{
                 script{
-                    sh echo "hola"
-                }
+                     sh "echo 'hola'"
             }
         }
     }
